@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { Header } from '../components/Header';
+import { MainHeader } from '../components/MainHeader';
 import { ListView } from '../components/ListView';
-import { Footer } from '../components/Footer';
 
 const account = [
   {
@@ -71,16 +70,15 @@ export const Main = () => {
 
   return (
     <View style={styles.main}>
-      <Header />
+      <MainHeader />
       <ListView data={state} total={total} />
-      <Footer />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   main: {
-    height: '100%',
+    height: '%',
     width: '100%',
   },
 

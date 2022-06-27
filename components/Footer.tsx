@@ -10,7 +10,8 @@ export const Footer = () => {
 
 const styles = StyleSheet.create({
   header: {
-    flex: 3,
+    height: '10%',
+    width: '100%',
     backgroundColor: '#16A085',
     justifyContent: 'center',
     alignItems: 'center',

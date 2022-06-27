@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 // import Ionicicons from '@expo/vector-icons/Ionicons';
 // import { MaterialIcons } from '@expo/vector-icons';
 
-export const Header = () => {
+export const DailyHeader = () => {
   return (
     <View style={styles.header}>
       <Image
@@ -18,7 +18,7 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
   header: {
-    flex: 3,
+    height: '15%',
     paddingHorizontal: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
