@@ -2,11 +2,11 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Card } from './Card';
 import { List } from './List';
 
-export const ListView = () => {
+export const ListView = ({ data, total }) => {
   return (
     <View style={styles.header}>
-      <Card />
-      <List />
+      <Card total={total} />
+      <List data={data} />
     </View>
   );
 };

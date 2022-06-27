@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export const Card = () => {
+export const Card = ({ total }) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.text}>₹-11204</Text>
+      <Text style={styles.text}>₹{total}</Text>
     </View>
   );
 };
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 32,
+    fontWeight: 'bold',
     color: '#ffffff',
   },
 });

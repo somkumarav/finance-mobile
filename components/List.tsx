@@ -7,20 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const data = [
-  {
-    name: 'sinatraa',
-    img: 'https://pbs.twimg.com/profile_images/1482509652654964739/LMIC_LIO_400x400.jpg',
-    amount: '12312',
-  },
-  {
-    name: 'Tenz',
-    img: 'https://www.sukhbeerbrar.com/wp-content/uploads/2021/05/133711194_181287153732302_8104905093917289814_n-1024x1009.jpg',
-    amount: '3123',
-  },
-];
-
-export const List = () => {
+export const List = ({ data }) => {
   return (
     <View style={styles.list}>
       <FlatList
@@ -38,10 +25,14 @@ export const List = () => {
                 ></Image>
               </View>
               <View style={styles.itemMain}>
-                <Text style={styles.text}>{itemdata.item.name}</Text>
+                <Text style={styles.nameText}>
+                  {itemdata.item.amount > 0 ? 'from ' : 'to '}
+                  {itemdata.item.name}
+                </Text>
+                {/* <Text style={styles}>hello</Text> */}
               </View>
               <View style={styles.itemAmount}>
-                <Text style={styles.text}>{itemdata.item.amount}</Text>
+                <Text style={styles.amountText}>{itemdata.item.amount}</Text>
               </View>
             </Pressable>
           );
@@ -53,14 +44,11 @@ export const List = () => {
 
 const styles = StyleSheet.create({
   list: {
+    width: '100%',
     paddingHorizontal: 10,
     height: '91%',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-
-  text: {
-    color: '#ffffff',
   },
 
   img: {
@@ -70,17 +58,37 @@ const styles = StyleSheet.create({
   },
 
   listItem: {
-    width: '86%',
-    backgroundColor: '#F5B041',
-    marginVertical: 10,
+    width: '100%',
+    padding: 10,
+    marginVertical: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
 
-  itemImage: {},
+  itemImage: {
+    width: '20%',
+  },
 
-  itemMain: {},
+  itemMain: {
+    width: '60%',
+  },
 
-  itemAmount: {},
+  itemAmount: {
+    width: '20%',
+  },
+
+  nameText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textTransform: 'capitalize',
+  },
+
+  amountText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    textAlign: 'right',
+  },
 });
